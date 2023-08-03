@@ -8,6 +8,7 @@ public abstract class Pessoa {
 	private String cpf;
 
 
+
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + ", localNascimento="
@@ -63,6 +64,5 @@ public abstract class Pessoa {
 		this.cpf = cpf;
 	}
 
-	// setando o nome de pessoa no atributo nome por meio de encapsulamento.
 
 }

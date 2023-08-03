@@ -112,7 +112,6 @@ public class App {
 						nota = scan.nextDouble();
 						if(nota>-1) {
 							aluno.listaNota.add(nota);
-							aluno.setMedia(nota);
 						}				
 					}
 				}
@@ -380,7 +379,6 @@ public class App {
 					nota = scan.nextDouble();
 					if(nota>-1) {
 						egresso.listaNota.add(nota);
-						egresso.setMedia(nota);
 					}
 				}
 

@@ -3,7 +3,7 @@ package br.pessoa.edu.academico;
 import java.util.ArrayList;
 
 public class Aluno extends Pessoa {
-	private double media=0;
+
 	public Aluno(String nome, String cpf) {
 		super(nome, cpf);
 		// TODO Auto-generated constructor stub
@@ -19,18 +19,21 @@ public class Aluno extends Pessoa {
 		this.listaNota = listaNota;
 	}
 	
-	
-	public double getMedia() {
+	private double media() {
+		double media = 0;
+		
+		for (double nota : listaNota) {
+			media += nota;
+		}
+		media /=listaNota.size();
 		return media;
 	}
+	
 
-	public void setMedia(double media) {
-		this.media += media;
-	}
 
 	@Override
 	public String toString() {
-		return "Aluno [media=" + (media/=listaNota.size())
+		return "Aluno [media=" + (media())
 				+ ", listaNota=" + listaNota + ", toString()=" + super.toString()+
 				"]";
 	}
@@ -38,7 +41,7 @@ public class Aluno extends Pessoa {
 	@Override
 	public double calcularPagamento() {
 		double pagamento = 180;
-		if(media>=6) {
+		if(media()>=6) {
 			return pagamento;
 		} else {
 			return pagamento/2;
@@ -47,9 +50,10 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public double pontuacao(){
-		double pontuacao = media;
+		double pontuacao = media();
 		if(pontuacao>=7) {
 			return pontuacao*2.8;
+			
 		} else {
 			return 0;
 		}
