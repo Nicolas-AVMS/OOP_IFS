@@ -35,7 +35,7 @@ public class Aluno extends Pessoa {
 	public String toString() {
 		return "Aluno [media=" + (media())
 				+ ", listaNota=" + listaNota + ", toString()=" + super.toString()+
-				"]";
+				"]"+"\n";
 	}
 
 	@Override
@@ -52,6 +52,7 @@ public class Aluno extends Pessoa {
 	public double pontuacao(){
 		double pontuacao = media();
 		if(pontuacao>=7) {
+			
 			return pontuacao*2.8;
 			
 		} else {

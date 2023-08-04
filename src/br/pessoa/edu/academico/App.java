@@ -1,6 +1,7 @@
 package br.pessoa.edu.academico;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 
@@ -28,6 +29,8 @@ public class App {
 		 * 18- Listar Reitor 
 		 * 0- Sair
 		 */
+		
+		
 		ArrayList<Aluno> listaAluno = new ArrayList<Aluno>();
 		ArrayList<Pesquisador> listaPesquisador = new ArrayList<Pesquisador>();
 		ArrayList<Professor> listaProfessor = new ArrayList<Professor>();
@@ -37,7 +40,7 @@ public class App {
 		ArrayList<Responsavel> listaResponsavel = new ArrayList<Responsavel>();
 		ArrayList<Egresso> listaEgresso = new ArrayList<Egresso>();
 		ArrayList<Reitor> listaReitor = new ArrayList<Reitor>();
-		ArrayList<Pessoa>listaPessoa = new ArrayList<Pessoa>();
+		HashSet<Pessoa> listaPessoa = new HashSet<>();
 		
 
 		String grupoPesquisa;
@@ -451,6 +454,21 @@ public class App {
 			case 19:
 				System.out.println(listaPessoa);
 				break;
+				
+			case 20:
+				listaPessoa.addAll(listaPsicologa);
+				listaPessoa.addAll(listaTecnico);
+				listaPessoa.addAll(listaReitor);
+				listaPessoa.addAll(listaEgresso);
+				listaPessoa.addAll(listaResponsavel);
+				listaPessoa.addAll(listaPedagoga);
+				listaPessoa.addAll(listaProfessor);
+				listaPessoa.addAll(listaPesquisador);
+				listaPessoa.addAll(listaAluno);
+				
+				double pontuacaoGeral =  calculaPontuacaoGeral(listaPessoa);
+				System.out.println("A Pontuação geral do Instituto é: " + pontuacaoGeral);
+				break;
 
 			}
 			
@@ -460,14 +478,14 @@ public class App {
 		}
 		scan.close();
 		scann.close();
-		listaPessoa.addAll(listaPsicologa);
-		listaPessoa.addAll(listaTecnico);
-		listaPessoa.addAll(listaReitor);
-		listaPessoa.addAll(listaEgresso);
-		listaPessoa.addAll(listaResponsavel);
-		listaPessoa.addAll(listaPedagoga);
-		listaPessoa.addAll(listaProfessor);
-		listaPessoa.addAll(listaPesquisador);
-		listaPessoa.addAll(listaAluno);
 	}
+	
+	public static double calculaPontuacaoGeral(HashSet<Pessoa> listaPessoa) {
+		double pontuacaoGeral = 0;
+		
+		for(Pessoa pessoa : listaPessoa) {
+			pontuacaoGeral += pessoa.pontuacao();
+		}
+		return pontuacaoGeral;
+	}	
 }
