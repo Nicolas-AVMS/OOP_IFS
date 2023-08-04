@@ -27,6 +27,8 @@ public class Menu{
         "16- Listar Egresso \n"+
         "17- Cadastrar Reitor \n"+
         "18- Listar Reitor \n"+
+        "19- Listar todos cadastrados \n"+
+        "20- Mostrar Pontuação Geral do Instituto \n"+
         "0- Sair";
         return menu;
     }      
