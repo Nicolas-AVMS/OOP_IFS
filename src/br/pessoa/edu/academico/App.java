@@ -27,6 +27,8 @@ public class App {
 		 * 16- Listar Egresso 
 		 * 17- Cadastrar Reitor 
 		 * 18- Listar Reitor 
+		 * 19- Listar todos cadastrados
+		 * 20- Mostrar Pontuação Geral do Instituto
 		 * 0- Sair
 		 */
 		
